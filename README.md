@@ -2,13 +2,10 @@
 
 ## Instructions
 
-1. This lab begins where the [Rails Github API](https://github.com/learn-co-curriculum/rails-github-api/) lab leaves off. You're provided with a solution to that lab.
+1. Follow [this tutorial](https://github.com/learn-co-curriculum/web-auth-readme) to implement authentication with the GitHub API. Display the current user's username on the `index` page in a heading.
 
-2. Create a new model `GithubRepo` in `app/models/github_repo.rb`. Since you're not storing `GithubRepo` in a database, this class does _not_ need to inherit from Active Record. Create the file manually – using `rails g model` will automatically inherit from Active Record and create a migration. Build out the `GithubRepo` class to pass the model tests.
+2. On the repositories `index` page, display a list of the current user's repositories. Displaying only the first page of results is fine; feel free to tackle pagination as a bonus.
 
-3. Move authentication from your controller to your service objects.
+3. Implement the `create` action in your `RepositoriesController` so that the form on `index.html.erb` successfully creates a new repository for the current user. The form input should be the name of the new repository. Redirect back to `'/'`. (HINT: Your parameters hash should be passed in as JSON. How can you accomplish this? Can you think of a method that will convert a hash to JSON?)
 
-4. Implement the `#initialize` method for your `GithubService` objects.
-
-5. Move the rest of your API calls into the `GithubService` object. Follow the path laid out in the tests, and get the application refactored and working. You will have to change the ERB file as well as your `#logged_in?` method.
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-refactoring-apis' title='Working with APIs'>Working with APIs</a> on Learn.co and start learning to code for free.</p>
+4. Your solution will "make it work", but we want to move the API calls out of the controllers. Once the tests pass, [learn how to refactor your code in the next lab](https://github.com/learn-co-curriculum/rails-refactoring-apis). This is important – don't skip it!
